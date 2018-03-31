@@ -4,7 +4,6 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,13 +29,13 @@ public class Hooks {
 
         if (browser.equalsIgnoreCase("chrome")) {
             // open chrome browser
-            System.out.println("start chrome browser...");
-            ChromeOptions options = new ChromeOptions();
-            options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
-            options.addArguments("--headless");
-            driver = new ChromeDriver(options);
-            //System.setProperty("webdriver.chrome.driver","./chromedriver"); //Set chromedriver path
-            //driver = new ChromeDriver();
+//            System.out.println("start chrome browser...");
+//            ChromeOptions options = new ChromeOptions();
+//            options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
+//            options.addArguments("--headless");
+//            driver = new ChromeDriver(options);
+            System.setProperty("webdriver.chrome.driver","./chromedriver"); //Set chromedriver path
+            driver = new ChromeDriver();
             driver.manage().deleteAllCookies();
             driver.get(URL);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -178,7 +178,7 @@ public class QunarHomePage extends BaseClass {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].removeAttribute('readonly')", this.chd_num_Dropdown);
             chd_num_Dropdown.clear();
-            chd_num_Dropdown.click();
+            chd_num_Dropdown.sendKeys(chdnum);
         }
     }
 
